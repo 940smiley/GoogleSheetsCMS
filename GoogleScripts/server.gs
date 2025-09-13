@@ -39,7 +39,13 @@
 var SCRIPT_PROP = PropertiesService.getScriptProperties(); // new property service
 
 function doGet(e) {
-  var output = HtmlService.createHtmlOutputFromFile('forms.html').setTitle("Post to the PSY1113 Blog");
+  var file = 'forms.html';
+  var title = "Post to the PSY1113 Blog";
+  if (e && e.parameter && e.parameter.page === 'commandCenter') {
+    file = 'commandCenter.html';
+    title = "CMS Command Center";
+  }
+  var output = HtmlService.createHtmlOutputFromFile(file).setTitle(title);
   output.setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
   return output;
 }
@@ -114,6 +120,26 @@ function sheetRowGenerator(firstName, lastName, title, blogText, house, assignme
           .createTextOutput(JSON.stringify({"result":"error", "error": e}))
           .setMimeType(ContentService.MimeType.JSON);
   } finally { //release lock
+    lock.releaseLock();
+  }
+}
+
+function saveSiteConfig(siteName, domain, hosting) {
+  var lock = LockService.getPublicLock();
+  lock.waitLock(30000);
+  try {
+    var doc = SpreadsheetApp.openById(SCRIPT_PROP.getProperty("key"));
+    var sheet = doc.getSheetByName("Sites");
+    if (!sheet) {
+      sheet = doc.insertSheet("Sites");
+      sheet.appendRow(["ID", "Site Name", "Domain", "Hosting Provider"]);
+    }
+    var nextRow = sheet.getLastRow() + 1;
+    sheet.getRange(nextRow, 1, 1, 4).setValues([[nextRow, siteName, domain, hosting]]);
+    return "OK";
+  } catch (f) {
+    return f.toString();
+  } finally {
     lock.releaseLock();
   }
 }
