@@ -27,8 +27,9 @@
         <label for="site_name">Site Name</label>
       </div>
       <div class="input-field">
-        <input id="domain" type="text" class="validate" required="" aria-required="true">
+        <input id="domain" type="text" class="validate" required="" aria-required="true" pattern="^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}$">
         <label for="domain">Domain</label>
+      </div>
       </div>
       <div class="input-field">
         <input id="hosting" type="text" class="validate" required="" aria-required="true">
