@@ -19,3 +19,7 @@ Now that your Google Sheet is set up, fork this GitHub repo to get your copy of 
 2. In the d19 directory, open the response.html file and overwrite the sheetID in line 81 with your own Google Sheet ID (from step 6 above).
 3. In the d19 directory, open the assets directory and then the js subdirectory. In the index.js file, overwrite the sheetID in line 33 with your own Google Sheet ID.
 4. If you are working in GitHub, you can serve your website by going into settings and choose the master-branch of your repo as the source for your GitHub Pages. If you are working in Reclaim Hosting or another server, make sure you set up the files for your site in a publicly accessible domain, subdomain, or subdirectory.
+
+## CMS Command Center
+
+The project now includes a simple command center for storing site information in your Google Sheet. Deploy the web app and navigate to your script URL with `?page=commandCenter` appended. The form will save the site name, domain, and hosting provider into a `Sites` sheet so you can manage connected sites directly from the spreadsheet.

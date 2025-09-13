@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CMS Command Center</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <style>
+      .btn {
+        background-color: #993333;
+      }
+      .btn:hover {
+        background-color: #A34747;
+      }
+      .btn:active {
+        background-color: #A85151;
+      }
+    </style>
+  </head>
+  <body>
+  <div id="config-container" class="container">
+    <h2>Site Configuration</h2>
+    <p>Enter your site's information to manage it via this Google Sheet.</p>
+    <form id="config-form">
+      <div class="input-field">
+        <input id="site_name" type="text" class="validate" required="" aria-required="true">
+        <label for="site_name">Site Name</label>
+      </div>
+      <div class="input-field">
+        <input id="domain" type="text" class="validate" required="" aria-required="true" pattern="^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}$">
+        <label for="domain">Domain</label>
+      </div>
+      </div>
+      <div class="input-field">
+        <input id="hosting" type="text" class="validate" required="" aria-required="true">
+        <label for="hosting">Hosting Provider</label>
+      </div>
+      <div class="row form-group">
+        <button class="btn" type="submit" onclick="submitConfig(); return false;">Save Configuration</button>
+      </div>
+      <div class="row form-group">
+        <div class="input-field col s12" id="progress"></div>
+      </div>
+    </form>
+    <div id="success" style="display:none">
+      <h5 class="left-align teal-text">Configuration Saved</h5>
+      <p>Your site information has been stored.</p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <script>
+    function submitConfig() {
+      var siteName = $('#site_name').val();
+      var domain = $('#domain').val();
+      var hosting = $('#hosting').val();
+      if (siteName.length === 0 || domain.length === 0 || hosting.length === 0) {
+        showError('Please fill out form completely');
+        return;
+      }
+    function submitConfig() {
+      var siteName = DOMPurify.sanitize($('#site_name').val());
+      var domain = DOMPurify.sanitize($('#domain').val());
+      var hosting = DOMPurify.sanitize($('#hosting').val());
+    }
+
+    function showSuccess(e) {
+      if (e === 'OK') {
+        $('#config-form').hide();
+        $('#success').show();
+      } else {
+        showError(e);
+      }
+    }
+
+    function showError(e) {
+      $('#progress').addClass('red-text').html(e);
+    }
+
+    function showMessage(e) {
+      $('#progress').removeClass('red-text').html(e);
+    }
+  </script>
+  </body>
+</html>
