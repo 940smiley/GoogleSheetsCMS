@@ -59,10 +59,10 @@
         showError('Please fill out form completely');
         return;
       }
-      showMessage('Saving configuration...');
-      google.script.run
-        .withSuccessHandler(showSuccess)
-        .saveSiteConfig(siteName, domain, hosting);
+    function submitConfig() {
+      var siteName = DOMPurify.sanitize($('#site_name').val());
+      var domain = DOMPurify.sanitize($('#domain').val());
+      var hosting = DOMPurify.sanitize($('#hosting').val());
     }
 
     function showSuccess(e) {
