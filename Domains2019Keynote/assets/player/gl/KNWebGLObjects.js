@@ -4272,3 +4272,4 @@ var KNWebGLBuildSparkleEffect = Class.create({
         this.sparkleSystem.drawFrame(percent, 1.0);
     }
 });
+

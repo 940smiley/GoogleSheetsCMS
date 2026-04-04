@@ -1,7 +1,7 @@
 /*
  * ShowController.js
  * Keynote HTML Player
- * 
+ *
  * Responsibility: Tungwei Cheng
  * Copyright (c) 2009-2016 Apple Inc. All rights reserved.
  */
@@ -263,7 +263,7 @@ var ShowController = Class.create({
                 this.displayManager.stageArea.style.opacity = 1;
             }).bind(this), 500)
         }
-        
+
         this.positionSlideNumberControl();
         this.positionSlideNumberDisplay();
         this.positionHelpPlacard();
@@ -272,21 +272,21 @@ var ShowController = Class.create({
     positionSlideNumberControl: function() {
         var left = (this.displayManager.usableDisplayWidth - this.slideNumberController.width) / 2;
         var top = this.displayManager.stageAreaTop + this.displayManager.stageAreaHeight - (this.slideNumberController.height + 16);
-        
+
         this.slideNumberController.setPosition(left, top);
     },
 
     positionSlideNumberDisplay: function() {
         var left = (this.displayManager.usableDisplayWidth - this.slideNumberDisplay.width) / 2;
         var top = this.displayManager.stageAreaTop + this.displayManager.stageAreaHeight - (this.slideNumberDisplay.height + 16);
-        
+
         this.slideNumberDisplay.setPosition(left, top);
     },
 
     positionHelpPlacard: function() {
         var left = (this.displayManager.usableDisplayWidth - this.helpPlacard.width) / 2;
         var top = (this.displayManager.usableDisplayHeight - this.helpPlacard.height) / 2;
-        
+
         this.helpPlacard.setPosition(left, top);
     },
 
@@ -366,7 +366,7 @@ var ShowController = Class.create({
         } else if (modifiers.ctrlKey) {
             // allow browsers to handle ctrl-key
             return;
-        } 
+        }
 
         event.stop();
         this.onKeyPress(key, modifiers);
@@ -429,7 +429,7 @@ var ShowController = Class.create({
             this.slideNumberTimeout = setTimeout(this.hideAndResetSlideNumberController.bind(this), 0);
             return;
         }
-        
+
         if (this.helpPlacard.isShowing) {
             this.helpPlacard.hide();
             return;
@@ -505,10 +505,10 @@ var ShowController = Class.create({
         /*
          * case kKeyCode_Return + kKeyModifier_Ctrl:
          * this.displayManager.showWaitingIndicator(); break;
-         * 
+         *
          * case kKeyCode_Return + kKeyModifier_Alt:
          * this.displayManager.hideWaitingIndicator(); break;
-         * 
+         *
          * case kKeyCode_Return + kKeyModifier_Meta: this.debugDiagnosticDump();
          * break;
          */
@@ -532,7 +532,7 @@ var ShowController = Class.create({
                 }
                 this.slideNumberTimeout = setTimeout(this.hideAndResetSlideNumberController.bind(this), 0);
             }
-            
+
             if (this.slideNumberDisplay.isShowing) {
                 this.slideNumberDisplay.hide();
             } else {
@@ -655,7 +655,7 @@ var ShowController = Class.create({
                 if (this.slideNumberDisplay.isShowing) {
                     this.slideNumberDisplay.hide();
                 }
-                
+
                 digitEncountered = true;
                 if (this.accumulatingDigits === false) {
                     // digit entered, start accumulating digits...
@@ -666,7 +666,7 @@ var ShowController = Class.create({
                 if (this.digitAccumulator.toString().length < 4) {
                     this.digitAccumulator *= 10;
                     this.digitAccumulator += (key - kKeyCode_0);
-                    
+
                     this.slideNumberController.setSlideNumber(this.digitAccumulator);
                     if (!this.slideNumberController.isShowing) {
                         this.slideNumberController.show();
@@ -685,17 +685,17 @@ var ShowController = Class.create({
             //this.digitAccumulator = 0;
         }
     },
-    
+
     hideAndResetSlideNumberController: function() {
         if (this.slideNumberTimeout) {
             clearTimeout(this.slideNumberTimeout);
         }
-        
+
         this.accumulatingDigits = false;
         this.digitAccumulator = 0;
         this.slideNumberController.hide();
     },
-    
+
     hideSlideNumberDisplay: function() {
         this.slideNumberDisplay.hide();
     },
@@ -1084,7 +1084,7 @@ var ShowController = Class.create({
             } else {
                 previousSceneIndex = sceneIndexToUse - 1;
             }
- 
+
             this.jumpToScene(previousSceneIndex, false);
 
             break;
@@ -1193,7 +1193,7 @@ var ShowController = Class.create({
             }
 
             this.jumpToSlide(previousSlideIndex + 1);
-            
+
             break;
 
         default:
@@ -1356,11 +1356,11 @@ var ShowController = Class.create({
         if (this.helpPlacard.isShowing) {
             this.helpPlacard.hide();
         }
-        
+
         if (this.slideNumberDisplay.isShowing) {
             this.slideNumberDisplay.hide();
         }
-        
+
         if (this.slideNumberController.isShowing) {
             if (this.slideNumberTimeout) {
                 clearTimeout(this.slideNumberTimeout);
@@ -1653,7 +1653,7 @@ var ShowController = Class.create({
                     this.changeState(kShowControllerState_IdleAtInitialState);
                 }
             } else {
-                // For IE9, animate current event means jump to next slide since there is no animated end state 
+                // For IE9, animate current event means jump to next slide since there is no animated end state
                 if (automatic) {
                     // For IE9, do a flat 2 sec delay for any automatic event to jump to next scene
                     setTimeout(
@@ -1933,7 +1933,7 @@ var ShowController = Class.create({
                 // if no hyperlink effect, just jump to slide
                 var event = this.script.events[sceneIndexToJump];
                 var automaticPlay = event.automaticPlay == 1 || event.automaticPlay == true;
-                this.jumpToSlide(slideIndexToJump + 1, automaticPlay); 
+                this.jumpToSlide(slideIndexToJump + 1, automaticPlay);
             }
         } else {
             // if no hyperlink effect, just jump to slide
@@ -2103,3 +2103,4 @@ var ShowController = Class.create({
     }
 
 });
+

@@ -1,14 +1,14 @@
-/* 
+/*
  * NarrationManager.js
  * Keynote HTML Player
- * 
+ *
  * Created by Tungwei Cheng
  * Copyright (c) 2013 Apple Inc. All rights reserved.
  */
 
 var NarrationManager = Class.create({
     initialize: function(recording) {
-        // recording movies in an array 
+        // recording movies in an array
         this.movieSegments = recording.movieSegments;
 
         // total time of this recording
@@ -79,7 +79,7 @@ var NarrationManager = Class.create({
                 if (this.lastSceneIndex === gShowController.script.numScenes - 1) {
                     if (sceneIndex === 0) {
                         isNextScene = true;
-                    }                    
+                    }
                 }
             } else {
                 if (this.lastSceneIndex + 1 === sceneIndex) {
@@ -116,12 +116,12 @@ var NarrationManager = Class.create({
                     // call jumpToHyperlinkSlide to play hyperlink transition
                     gShowController.jumpToHyperlinkSlide(slideIndexToJump, hyperlink);
                 } else {
-                    // if no hyperlink event is found for any reason, we still want to jump 
+                    // if no hyperlink event is found for any reason, we still want to jump
                     gShowController.jumpToScene(sceneIndex, false);
                 }
             }
         } else if (event.animationPhase === "none" && startup == null) {
-            gShowController.jumpToScene(sceneIndex, false);                
+            gShowController.jumpToScene(sceneIndex, false);
         }
 
         // if there is any more event then set it to run next
@@ -177,3 +177,4 @@ var NarrationManager = Class.create({
         return slideIndex;
     }
 });
+

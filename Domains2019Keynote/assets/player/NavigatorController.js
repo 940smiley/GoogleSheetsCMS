@@ -1,7 +1,7 @@
-/* 
+/*
  * NavigatorController.js
  * Keynote HTML Player
- * 
+ *
  * Created by Tungwei Cheng
  * Copyright (c) 2012-2013 Apple Inc. All rights reserved.
  */
@@ -10,7 +10,7 @@ var NavigatorController = Class.create({
     initialize: function(domNode) {
         // root node for the navigator control
         this.domNode = domNode;
-        
+
         // initialize an instance of NavigatorThumbnailSidebar object
         this.thumbnailSidebar = new NavigatorThumbnailSidebar();
 
@@ -27,11 +27,11 @@ var NavigatorController = Class.create({
         this.thumbnailScroller.domNode.appendChild(this.thumbnailSelection.domNode);
         this.thumbnailScroller.domNode.appendChild(this.thumbnailContainer.domNode);
         this.domNode.appendChild(this.thumbnailSidebar.domNode);
-        
+
         // create left sidebar to react to events
         this.leftSidebar = new NavigatorLeftSidebar();
         this.domNode.appendChild(this.leftSidebar.domNode);
-        
+
         // mouse events
         Event.observe(this.domNode, "click", this.handleClickEvent.bind(this));
         Event.observe(this.leftSidebar.domNode, "mouseover", this.handleMouseOverEvent.bind(this));
@@ -51,7 +51,7 @@ var NavigatorController = Class.create({
             this.thumbnailScroller.domNode.style.width = "129px";
         }
 
-        // adjust navigator width for IE 
+        // adjust navigator width for IE
         // see <rdar://problem/12511461> IE9/10: Navigator scroll bar touching slide thumbnails while in show mode
         if (browserPrefix === "ms") {
             this.domNode.style.width = "148px";
@@ -90,7 +90,7 @@ var NavigatorController = Class.create({
     select: function(slideIndex) {
         gShowController.jumpToSlide(slideIndex);
     },
-    
+
     handleMouseOverEvent: function(event) {
         event = event || window.event;
 
@@ -127,7 +127,7 @@ var NavigatorController = Class.create({
 
     handleMouseOutEvent: function(event) {
         clearTimeout(this.navigatorTimeout);
-        
+
         this.navigatorTimeout = setTimeout(this.thumbnailSidebar.hide.bind(this.thumbnailSidebar, this.leftSidebar), 400);
     },
 
@@ -181,7 +181,7 @@ var NavigatorController = Class.create({
             var originalSlideHeight = gShowController.script.originalSlideHeight;
             var aspectRatio = originalSlideWidth / originalSlideHeight;
             var width, height;
-            
+
             if (aspectRatio >= 4/3) {
                 width = 88;
                 height =  Math.ceil(88 * (1/aspectRatio));
@@ -189,7 +189,7 @@ var NavigatorController = Class.create({
                 width = Math.ceil(66 * aspectRatio);
                 height = 66;
             }
-            
+
             this.slideThumbnail = {
                 width: width,
                 height: height,
@@ -323,3 +323,4 @@ var NavigatorThumbnailItem = Class.create({
     }
 
 });
+

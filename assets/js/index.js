@@ -15,7 +15,7 @@ var sheetUrl = 'https://spreadsheets.google.com/feeds/list/1Sc3yb2leeOFNCFGgMOB9
 // Invoke the ajax request first
 var xhr = new XMLHttpRequest()
 xhr.open('GET', sheetUrl)
-xhr.onload = function () {       
+xhr.onload = function () {
 
   var entries = JSON.parse(xhr.responseText);
   entries = entries.feed.entry;
@@ -28,8 +28,8 @@ xhr.onload = function () {
             assignments.push(entries[i].gsx$assignment.$t)
             }
     };
-  
-  // Once data has been loaded, then setup your paginataion instance and load 
+
+  // Once data has been loaded, then setup your paginataion instance and load
   // the entries into the paginataion plugin
   $('#pagination-container').pagination({
       dataSource: entries,

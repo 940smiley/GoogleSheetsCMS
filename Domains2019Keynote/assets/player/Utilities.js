@@ -1,7 +1,7 @@
 /*
  * Utilities.js
  * Keynote HTML Player
- * 
+ *
  * Responsibility: Tungwei Cheng
  * Copyright (c) 2009-2013 Apple Inc. All rights reserved.
  */
@@ -150,7 +150,7 @@ function scaleSizeWithinSize(sourceWidth, sourceHeight, destinationWidth, destin
         scaledSize.width = sourceWidth * ( destinationHeight / sourceHeight );
         scaledSize.height = destinationHeight
     } else {
-        scaledSize.width = destinationWidth;	
+        scaledSize.width = destinationWidth;
         scaledSize.height = destinationHeight
     }
 
@@ -168,7 +168,7 @@ function parseTransformMatrix(transformMatrix) {
 
     return parsedMatrix;
 }
-		
+
 function escapeTextureId(textureId) {
     var escapedTextureId = textureId.replace( /\./g, "-" );
 
@@ -190,7 +190,7 @@ Object.extend(Date.prototype, {
     // formatDate (date_object, format)
     // Returns a date in the output format specified.
     // The format string uses the same abbreviations as in getDateFromFormat()
-    // 
+    //
     // ------------------------------------------------------------------
     format: function(format) {
         format=format+"";
@@ -284,3 +284,4 @@ function getElementsByTagNameNS(xml, tagName, ns, prefix) {
 
     return nodes;
 }
+

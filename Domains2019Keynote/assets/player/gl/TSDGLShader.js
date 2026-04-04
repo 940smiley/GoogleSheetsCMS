@@ -518,3 +518,4 @@ var TSDGLShaderQualifierMat4 = Class.create(TSDGLShaderQualifier, {
         this._needsUpdate = false;
     }
 });
+

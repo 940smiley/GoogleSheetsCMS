@@ -1,7 +1,7 @@
 /*
  * OrientationController.js
  * Keynote HTML Player
- * 
+ *
  * Responsibility: Tungwei Cheng
  * Copyright (c) 2009-2013 Apple Inc. All rights reserved.
  */
@@ -38,3 +38,4 @@ var OrientationController = Class.create({
         });
     }
 });
+

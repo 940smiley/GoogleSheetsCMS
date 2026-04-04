@@ -1,7 +1,7 @@
-/* 
+/*
  * HelpPlacardController.js
  * Keynote HTML Player
- * 
+ *
  * Created by Tungwei Cheng
  * Copyright (c) 2012-2013 Apple Inc. All rights reserved.
  */
@@ -32,7 +32,7 @@ var HelpPlacardController = Class.create({
         this.helpPlacardTitleBar = new HelpPlacardTitleBar();
         this.helpPlacardContentPanel = new HelpPlacardContentPanel(itemList);
         this.helpPlacardFooter = new HelpPlacardFooter();
-        
+
         this.domNode.appendChild(this.helpPlacardTitleBar.domNode);
         this.domNode.appendChild(this.helpPlacardContentPanel.domNode);
         this.domNode.appendChild(this.helpPlacardFooter.domNode);
@@ -58,7 +58,7 @@ var HelpPlacardController = Class.create({
 
     setPosition: function(left, top) {
         this.domNode.style.left = left + "px";
-        this.domNode.style.top  = top  + "px"  
+        this.domNode.style.top  = top  + "px"
     },
 
     show: function() {
@@ -192,3 +192,4 @@ var HelpPlacardFooter = Class.create({
         window.open("Acknowledgements.pdf", "_Acknowledgements");
     }
 });
+

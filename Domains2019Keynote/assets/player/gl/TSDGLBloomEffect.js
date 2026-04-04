@@ -168,3 +168,4 @@ var TSDGLBloomEffect = Class.create({
         gl.viewport(oldViewportRect[0], oldViewportRect[1], oldViewportRect[2], oldViewportRect[3]);
     }
 });
+

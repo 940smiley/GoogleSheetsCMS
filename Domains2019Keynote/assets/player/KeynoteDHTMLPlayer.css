@@ -25,7 +25,7 @@ body
 
 div.bigBlackSquare
 {
-    position: absolute; 
+    position: absolute;
     top: 0px;
     left: 0px;
     width: 1024px;
@@ -35,10 +35,10 @@ div.bigBlackSquare
 }
 
 /* Debug Status Display */
-   
+
 div#statisticsDisplay
 {
-    position: absolute; 
+    position: absolute;
     color : white;
     background-color: grey;
     visibility: hidden;
@@ -48,14 +48,14 @@ div#statisticsDisplay
 
 div#stageArea
 {
-    position: absolute; 
+    position: absolute;
     visibility: hidden;
     overflow: hidden;
 }
 
 div.stage
 {
-    position: absolute; 
+    position: absolute;
     top: 0;
     left: 0;
     overflow: visible;
@@ -240,7 +240,7 @@ div.navigatorThumbnailItemCanvasContainer {
     -moz-box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
     -ms-box-shadow: 0px 2px 4px rgba(0,0,0,0.5);
     background-color: #444;
-    width: 88px;    
+    width: 88px;
     height: 66px;
 }
 
@@ -340,7 +340,7 @@ div#helpPlacard {
 div.helpPlacardTitleBar {
     /*position:absolute;*/
     font-size: 22px;
-    color: rgba(120,120,120,1);    
+    color: rgba(120,120,120,1);
     font-family: Helvetica, Arial, sans-serif;
     width: 822px;
     height: 40px;
@@ -359,7 +359,7 @@ div.helpPlacardTitle {
 div.helpPlacardCloseButton {
     cursor:default;
     top:10px;
-    left:10px;    
+    left:10px;
     position:absolute;
     background:url('close_n@2x.png') no-repeat 0 0;
     background-size: 21px 21px;
@@ -383,7 +383,7 @@ div.helpPlacardContentPanel {
 }
 
 div.helpPlacardHeader {
-    color: rgba(255,255,255,1);    
+    color: rgba(255,255,255,1);
     font-weight: bold;
     width:822px;
     height:40px;
@@ -391,7 +391,7 @@ div.helpPlacardHeader {
 }
 
 div.helpPlacardHeader {
-    color: rgba(255,255,255,1);    
+    color: rgba(255,255,255,1);
     font-weight: bold;
     width:822px;
     height:40px;
@@ -406,14 +406,14 @@ div.helpPlacardItem {
 
 div.helpPlacardLeftHeaderItem {
     /*position:absolute;*/
-    color: white;    
+    color: white;
     text-align:right;
     float:left;
     width:400px;
 }
 
 div.helpPlacardLeftItem {
-    color: rgba(120,120,120,1);    
+    color: rgba(120,120,120,1);
     text-align:right;
     float:left;
     width:400px;
@@ -543,7 +543,7 @@ div.helpPlacardAcknowledgementsButton:active {
 
 div#slideCounter
 {
-    position: absolute; 
+    position: absolute;
     display: table-cell;
     text-align: center;
     vertical-align: middle;
@@ -556,7 +556,7 @@ div#slideCounter
 
 #helpText
 {
-    position: absolute; 
+    position: absolute;
     text-align: center;
     font-family: Helvetica;
     font-size: 13px;
@@ -813,7 +813,7 @@ div#waitingIndicator
 
 div#waitingSpinner
 {
-    position: absolute; 
+    position: absolute;
     visibility: visible;
     top: 27px;
     left: 33px;

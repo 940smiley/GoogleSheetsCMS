@@ -1480,3 +1480,4 @@ var KNWebGLBuildSparkleSystem = Class.create(KNWebGLParticleSystem, {
         return lifeSpan;
     }
 });
+

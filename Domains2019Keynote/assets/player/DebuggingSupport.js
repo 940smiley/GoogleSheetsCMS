@@ -1,7 +1,7 @@
 /*
  * DebuggingSupport.js
  * Keynote HTML Player
- * 
+ *
  * Responsibility: Tungwei Cheng
  * Copyright (c) 2009-2013 Apple Inc. All rights reserved.
  */
@@ -25,8 +25,8 @@ var gDebugLastMethodName = "";
 // Enable these constants to simulate various conditions/errors:
 
 var gDebugSimulateSlowTextureDownload = false;
-var gDebugSimulateTextureLoadFailure = false;	
-var gDebugSimulateScriptDownloadFailure = false;	
+var gDebugSimulateTextureLoadFailure = false;
+var gDebugSimulateScriptDownloadFailure = false;
 
 // Constants:
 // ===============================================================
@@ -251,7 +251,7 @@ function debugRecursivelyDumpDomFrom(object, indentPadding) {
     var kDebugRecursivelyDumpDomFrom = kDebugFunction + "_" + "recursivelyDumpDomFrom";
     var objectId	= object.id;
     var objectTag	= object.nodeName.toLowerCase();
-    
+
     if (objectTag == "#text") {
         return;
     }
@@ -271,6 +271,7 @@ function debugRecursivelyDumpDomFrom(object, indentPadding) {
 
     debugMessageAlways(kDebugRecursivelyDumpDomFrom, "-" + (debugDomDumpLineNumber++) + indentPadding + "</" + objectTag + ">");
 }
+
 
 
 
